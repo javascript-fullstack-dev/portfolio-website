@@ -34,7 +34,7 @@ A personal portfolio website to showcase my skills, projects, and journey as a w
 
 ## 🌐 Deployment
 
-Deployed on [GitHub Pages](https://github.com/javascript-fullstack-dev/portfolio-website#).
+Deployed on [GitHub Pages](https://github.com/javascript-fullstack-dev/portfolio-website).
 
 ## 🤝 Contributing
 

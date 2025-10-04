@@ -1,0 +1,23 @@
+:root {
+    /* Base colors */
+    --color-bg: #111111;        /* Main background (off-black) */
+    --color-text: #fafafa;      /* Primary text (off-white) */
+    --color-muted: #f3f3f3;     /* Secondary/paragraph text (light gray) */
+  
+    /* Accent colors */
+    --color-accent: #7843E9;    /* Bright purple accent (buttons, highlights) */
+    --color-accent-hover: #5b1be4; /* Slightly darker purple for hover states */
+  
+    /* Borders & dividers */
+    --color-border: #1f1f1f;    /* Subtle dark gray for section dividers */
+  
+    /* Utility */
+    --color-link: #7843E9;      /* Links use the accent purple */
+    --color-link-hover: #ffffff; /* On hover, links invert to white */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
