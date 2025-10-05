@@ -20,4 +20,109 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Schibsted Grotesk";
 }
+
+/* Defaults */
+
+
+
+/* THE HERO SECTION STYLES START HERE */
+
+section.hero-section {
+    background-image: url(/assets/img/common-bg.svg);
+    background-color: var(--color-muted);
+    background-blend-mode:hue;
+    background-size: cover;
+    position: relative;
+    height: 100svh;
+}
+
+section.hero-section aside {
+    position: absolute;
+    display: grid;
+    grid-template-rows: repeat(.8rem);
+    background: var(--color-text);
+    top: 50%;
+    transform: translateY(-50%);
+    height: 265px;
+    padding: .5rem .3rem;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 0px 35px 2px #1f1f1f13;
+}
+
+section.hero-section aside > img {
+    min-height: 100%;
+    padding: .5rem .5rem .8rem;
+    transition: .6s ease-in;
+}
+
+section.hero-section aside > img:hover {
+    background-color: #c8affdc5;
+    color: var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header#header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+    gap: 2.5rem;
+}
+
+header#header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: .3rem;
+    color: var(--color-bg);
+}
+
+header#header p {
+    line-height: 1.5;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--color-border);
+}
+
+header a.btn {
+    text-decoration: none;
+    background-color: var(--color-link);
+    color: var(--color-text);
+    padding: 1rem 4rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: .5s ease-out;
+}
+
+header a.btn:hover {
+    transform: translateY(-8%);
+}
+
+section .hero-scroll {
+    transform: translateX(50vw);
+    margin-top: -4.5rem;
+    height: 2.8rem;
+    width: 1.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .hero-scroll span {
+    height: 16%;
+    width: 20%;
+    background: var(--color-border);
+    border-radius: 100%;
+}
+
+/* THE HERO SECTION STYLES ENDS HERE */
