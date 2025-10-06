@@ -20,10 +20,26 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Schibsted Grotesk";
+    font-family: "Arial";
 }
 
 /* Defaults */
+
+.text-bold,
+.text-link,
+section.about-section main .skills li {
+    font-weight: bold;
+    color: var(--color-border);
+}
+
+a.text-link {
+    color: var(--color-link) !important;
+    transition: .5s ease;
+}
+
+a.text-link:hover {
+    color: var(--color-accent-hover) !important;
+}
 
 
 
@@ -126,3 +142,154 @@ section .hero-scroll span {
 }
 
 /* THE HERO SECTION STYLES ENDS HERE */
+
+/* THE ABOUT SECTION STYLES STARTS HERE */
+
+section.about-section{
+    background-color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 7rem 2rem;
+}
+
+section.about-section header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+section.about-section h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 1.5;
+    letter-spacing: .2rem;
+    color: var(--color-bg);
+    position: relative;
+}
+
+section.about-section header h1::after {
+    content: '';
+    position: absolute;
+    transform: translateX(-430%);
+    margin: 4.5rem 0 0;
+    top: 0;
+    bottom: 0;
+    height: .38rem;
+    width: 2rem;
+    border-radius: 5rem;
+    background: var(--color-accent);
+}
+
+section.about-section header p {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    color: var(--color-border);
+}
+
+section.about-section main {
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    column-gap: 5rem;
+}
+
+section.about-section main .skills,
+section.about-section main .skills .skill,
+section.about-section main .know-me .bio,
+section.about-section main .skills ul,
+section.about-section main .know-me {
+    display: flex;
+}
+
+section.about-section main h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+section.about-section main .know-me,
+section.about-section main .skills {
+    flex-direction: column;
+    gap: 3rem;
+}
+
+section.about-section main .know-me p {
+    font-size: 1.1rem;
+    color: var(--color-border);
+}
+
+section.about-section main .know-me .bio {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    line-height: 1.8;
+}
+
+section.about-section main .know-me .bio p,
+section.about-section main .know-me .bio .text-bold,
+section.about-section main .skills ul li {
+    color: #5e5c5c;
+}
+
+section.about-section main .know-me a.btn {
+    text-decoration: none;
+    background-color: var(--color-link);
+    color: var(--color-text);
+    padding: .6rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 550;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: .5s ease-out;
+}
+
+section.about-section main .know-me a.btn:hover {
+    transform: translateY(-8%);
+}
+
+section.about-section main .skills ul {
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+section.about-section main .skills ul li {
+    list-style: none;
+    padding: .8rem 1.2rem;
+    background-color: #1f1f1f13;
+    border-radius: 5px;
+}
+
+/* MEDIA QUERIES FOR THE ABOUT SECTION STARTS HERE */
+/* MOBILE MEDIA QUERY */
+@media screen and (max-width: 768px) {
+    section.about-section main {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+}
+
+/* TABLET MEDIA QUERY */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    section.about-section main {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+}
+
+/* LAPTOP AND MORE MEDIA QUERY */
+@media screen and (min-width: 1024px) {
+    section.about-section main {
+        padding-left: max(10rem, 2vw);
+        padding-right: max(10rem, 2vw);
+    }
+}
+
+/* MEDIA QUERIES FOR THE ABOUT SECTION ENDS HERE */
+
+/* THE ABOUT SECTION STYLES ENDS HERE */
