@@ -2,7 +2,7 @@
     /* Base colors */
     --color-bg: #111111;        /* Main background (off-black) */
     --color-text: #fafafa;      /* Primary text (off-white) */
-    --color-muted: #f3f3f3;     /* Secondary/paragraph text (light gray) */
+    --color-muted: #f3f3f3;    /* Secondary/paragraph text (light gray) */
   
     /* Accent colors */
     --color-accent: #7843E9;    /* Bright purple accent (buttons, highlights) */
@@ -46,9 +46,7 @@ a.text-link:hover {
 /* THE HERO SECTION STYLES START HERE */
 
 section.hero-section {
-    background-image: url(/assets/img/common-bg.svg);
-    background-color: var(--color-muted);
-    background-blend-mode:hue;
+    background: linear-gradient(#f3f3f3f1, #fafafaee), url(/assets/img/common-bg.svg);
     background-size: cover;
     position: relative;
     height: 100svh;
@@ -91,7 +89,8 @@ header#header {
     gap: 2.5rem;
 }
 
-header#header h1 {
+header#header h1,
+section.contact-section header h1 {
     font-size: 4rem;
     font-weight: 900;
     line-height: 1.5;
@@ -116,6 +115,7 @@ header#header a.btn {
     text-transform: uppercase;
     border-radius: 8px;
     transition: .5s ease-out;
+    border: none;
 }
 
 header#header a.btn:hover {
@@ -146,8 +146,9 @@ section .hero-scroll span {
 /* THE ABOUT SECTION STYLES STARTS HERE */
 
 section.about-section,
-section.projects-section {
-    background-color: var(--color-text);
+section.projects-section,
+section.contact-section {
+    background: linear-gradient(#f3f3f3, #fafafa);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,7 +158,8 @@ section.projects-section {
 }
 
 section.about-section header,
-section.projects-section header {
+section.projects-section header,
+section.contact-section header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,7 +169,8 @@ section.projects-section header {
 }
 
 section.about-section h1,
-section.projects-section h1 {
+section.projects-section h1,
+section.contact-section header h1 {
     font-size: 2.5rem;
     text-transform: uppercase;
     line-height: 1.5;
@@ -177,7 +180,8 @@ section.projects-section h1 {
 }
 
 section.about-section header h1::after,
-section.projects-section header h1::after {
+section.projects-section header h1::after,
+section.contact-section header h1::after {
     content: '';
     position: absolute;
     transform: translateX(-430%);
@@ -191,7 +195,8 @@ section.projects-section header h1::after {
 }
 
 section.about-section header p,
-section.projects-section header p {
+section.projects-section header p,
+section.contact-section header p {
     line-height: 1.5;
     font-size: 1.1rem;
     color: var(--color-border);
@@ -238,12 +243,16 @@ section.about-section main .know-me .bio {
 section.about-section main .know-me .bio p,
 section.about-section main .know-me .bio .text-bold,
 section.about-section main .skills ul li,
-section.projects-section main .card header p {
+section.projects-section main .card header p,
+section.contact-section header p,
+section.contact-section form input,
+section.contact-section form textarea {
     color: #5e5c5c;
 }
 
 section.about-section main .know-me a.btn,
-section.projects-section main .card a.btn {
+section.projects-section main .card a.btn,
+section.contact-section form .btn {
     text-decoration: none;
     background-color: var(--color-link);
     color: var(--color-text);
@@ -252,11 +261,14 @@ section.projects-section main .card a.btn {
     font-weight: 550;
     text-transform: uppercase;
     border-radius: 4px;
+    border: none;
+    cursor: pointer;
     transition: .5s ease-out;
 }
 
 section.about-section main .know-me a.btn:hover,
-section.projects-section main .card a.btn:hover {
+section.projects-section main .card a.btn:hover,
+section.contact-section form .btn {
     transform: translateY(-8%);
 }
 
@@ -295,7 +307,8 @@ section.about-section main .skills ul li {
 /* LAPTOP AND MORE MEDIA QUERY */
 @media screen and (min-width: 1024px) {
     section.about-section main,
-    section.projects-section main {
+    section.projects-section main,
+    section.contact-section {
         padding-left: max(10rem, 2vw);
         padding-right: max(10rem, 2vw);
     }
@@ -376,3 +389,96 @@ section.projects-section main .card header p {
 /* MEDIA QUERIES FOR THE PROEJECTS SECTION ENDS HERE */
 
 /* THE PROJECTS SECTION STYLES ENDS HERE */
+
+/* THE CONTACT SECTION STYLES STARTS HERE */
+section.contact-section {
+    background: linear-gradient(#f3f3f3f1, #fafafaee), url(/assets/img/common-bg.svg);
+    background-size: cover;
+}
+
+section.contact-section header h1 {
+    font-size: 2.2rem;
+}
+section.contact-section header h1::after {
+    transform: translateX(-380%);
+}
+
+section.contact-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    /* min-width: 60%; */
+    background-color: var(--color-link-hover);
+    border-radius: 8px;
+    box-shadow: 0 0px 35px 2px #1f1f1f13;
+}
+
+section.contact-section form input:not(:first-child),
+section.contact-section form textarea {
+    width: 100%;
+    padding: 1.3rem 1rem;
+    background-color: var(--color-muted);
+    outline: none;
+    border: none;
+    font-size: .9rem;
+    font-weight: bold;
+    margin-top: .8rem;
+    border-radius: 5px;
+}
+
+section.contact-section form textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+section.contact-section form div > label {
+    font-size: .8rem;
+    color: #5e5c5c;
+    font-weight: bold;
+}
+
+section.contact-section form .end {
+    display: flex;
+    justify-content: end;
+}
+
+/* MOBILE MEDIA QUERY */
+@media screen and (max-width: 895px) {
+    section.contact-section form {
+        gap: 1rem;
+        padding: 1rem;
+        min-width: 95%;
+    }
+    section.contact-section form textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+}
+
+/* TABLET MEDIA QUERY */
+@media screen and (min-width: 896px) and (max-width: 1024px) {
+    section.contact-section form div > label {
+        font-size: 1rem;
+    }
+    section.contact-section form {
+        gap: 1.5rem;
+        padding: 1.5rem;
+        min-width: 75%;
+    }
+}
+
+/* LAPTOP AND MORE MEDIA QUERY */
+@media screen and (min-width: 1024px) {
+    section.contact-section form div > label {
+        font-size: 1rem;
+    }
+    section.contact-section form {
+        gap: 1.8rem;
+        padding: 1.8rem;
+        min-width: 60%;
+    }
+}
+/* MEDIA QUERIES FOR THE PROEJECTS SECTION ENDS HERE */
+/* THE CONTACT SECTION STYLES ENDS HERE */
