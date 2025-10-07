@@ -25,6 +25,10 @@
 
 /* Defaults */
 
+body {
+    /* overflow-y: hidden; */
+}
+
 .text-bold,
 .text-link,
 section.about-section main .skills li {
@@ -43,13 +47,81 @@ a.text-link:hover {
 
 
 
-/* THE HERO SECTION STYLES START HERE */
+/* THE NAV SECTION STYLES STARTS HERE */
+nav.nav-bar {
+    position: fixed;
+    height: 6rem;
+    width: 100%;
+    background-color: var(--color-link-hover);
+    box-shadow: 0 0px 35px 2px #1f1f1f13;
+    color: var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+    z-index: 1;
+}
+
+nav.nav-bar a,
+nav.nav-bar ul li a {
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: .1rem;
+}
+
+nav.nav-bar .nav-logo {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    gap: .7rem;
+}
+
+nav.nav-bar .nav-logo img {
+    max-width: 3rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+nav.nav-bar .nav-logo h4 {
+        font-size: 1.1rem;
+    &:hover {
+        color: var(--color-accent-hover);
+        cursor: pointer;
+    }
+}
+
+nav.nav-bar ul {
+    display: inherit;
+    gap: 1.5rem;
+
+    @media screen and (width <= 600px) {
+        display: none;
+    }
+}
+
+nav.nav-bar ul li {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: bold;
+    transition: .5s ease;
+
+    &:hover {
+        color: var(--color-accent-hover);
+        cursor: pointer;
+    }
+}
+/* THE NAV SECTION STYLES ENDS HERE */
+
+/* THE HERO SECTION STYLES STARTS HERE */
 
 section.hero-section {
     background: linear-gradient(#f3f3f3f1, #fafafaee), url(/assets/img/common-bg.svg);
     background-size: cover;
     position: relative;
-    height: 100svh;
+    height: max(80vh, 75vh, 100vh);
 }
 
 section.hero-section aside {
@@ -63,6 +135,10 @@ section.hero-section aside {
     padding: .5rem .3rem;
     border-radius: 0 4px 4px 0;
     box-shadow: 0 0px 35px 2px #1f1f1f13;
+
+    @media screen and (width < 900px) {
+        display: none;
+    }
 }
 
 section.hero-section aside > img {
@@ -91,7 +167,7 @@ header#header {
 
 header#header h1,
 section.contact-section header h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 4vw, 5rem);
     font-weight: 900;
     line-height: 1.5;
     letter-spacing: .3rem;
@@ -100,9 +176,25 @@ section.contact-section header h1 {
 
 header#header p {
     line-height: 1.5;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     font-weight: 100;
     color: var(--color-border);
+
+    @media screen and (width < 640px) {
+        display: none;
+    }
+}
+
+header#header p:last-of-type {
+    display: none;
+    line-height: 1.5;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 100;
+    color: var(--color-border);
+
+    @media screen and (width < 640px) {
+        display: block;
+    }
 }
 
 header#header a.btn {
@@ -132,6 +224,10 @@ section .hero-scroll {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (width < 900px) {
+        display: none;
+    }
 }
 
 section .hero-scroll span {
