@@ -26,7 +26,7 @@
 /* Defaults */
 
 body {
-    /* overflow-y: hidden; */
+    overflow-x: hidden;
 }
 
 .text-bold,
@@ -578,3 +578,104 @@ section.contact-section form .end {
 }
 /* MEDIA QUERIES FOR THE PROEJECTS SECTION ENDS HERE */
 /* THE CONTACT SECTION STYLES ENDS HERE */
+
+/* THE FOOTER SECTION STYLES START HERE */
+footer.footer-section {
+    background-color: var(--color-bg);
+    color: var(--color-muted);
+}
+
+footer.footer-section .container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    margin: auto;
+
+    @media (width >= 40rem) {
+        /* 640px */
+        grid-template-columns: 1fr;
+    }
+
+    @media (width >= 60rem) {
+        /* 900px */
+    }
+}
+
+footer.footer-section .container .ft-top {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    align-items: center;
+
+
+    > .ft-card h3 {
+        font-weight: 700;
+    }
+
+    @media (width >= 40rem) {
+        padding: 4rem 2rem;
+    }
+
+    @media (width >= 60rem) {
+        padding: 4rem 8rem;
+    }
+
+    & .ft-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+
+        @media (width >= 40rem) {
+            flex: 1;
+        }
+    }
+
+    & .ft-card:last-of-type {
+
+        @media (width >= 40rem) {
+            align-items: end;
+        }
+    }
+
+    & .ft-card:last-of-type img {
+        width: 1.5rem;
+
+        @media (width >= 60rem) {
+            width: 2rem;
+        }
+    }
+}
+
+/* footer.footer-section .ft-top .ft-card:last-of-type > div img {
+    height: 100%;
+} */
+
+footer.footer-section .ft-btm {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+footer.footer-section .ft-btm::before {
+    content: '';
+    width: 85vw;
+    border: 1px solid var(--color-border);
+}
+
+footer.footer-section .ft-btm p {
+    text-align: center;
+    font-size: min(.8rem, .9rem);
+    margin: 2.5rem 0;
+}
+
+footer.footer-section .ft-btm p a {
+    color: inherit;
+    transition: .5s ease;
+
+    &:hover {
+        color: var(--color-accent-hover);
+    }
+}
+/* THE FOOTER SECTION STYLES ENDS HERE */
