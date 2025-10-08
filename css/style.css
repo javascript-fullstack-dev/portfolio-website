@@ -223,7 +223,7 @@ section .hero-scroll {
     border-radius: 5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 
     @media screen and (width < 900px) {
         display: none;
@@ -231,10 +231,34 @@ section .hero-scroll {
 }
 
 section .hero-scroll span {
-    height: 16%;
+    height: 14%;
     width: 20%;
     background: var(--color-border);
     border-radius: 100%;
+    animation: continous-scroll 1s ease-in-out infinite forwards;
+}
+
+section .hero-scroll:hover span {
+    background-color: red;
+}
+
+@keyframes continous-scroll {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    33% {
+        transform: translateY(200%);
+        opacity: .3;
+    }
+    66% {
+        transform: translateY(300%);
+        opacity: .6;
+    }
+    100% {
+        transform: translateY(400%);
+        opacity: .9;
+    }
 }
 
 /* THE HERO SECTION STYLES ENDS HERE */
